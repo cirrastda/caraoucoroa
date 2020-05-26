@@ -9,9 +9,10 @@
 import UIKit
 
 class ResultadoViewController: UIViewController {
-
     
     @IBOutlet weak var imgMoeda: UIImageView!
+    
+    var imagem: String!;
     
     func sorteia() -> String {
         let number = Int.random(in: 0...1);
@@ -26,13 +27,15 @@ class ResultadoViewController: UIViewController {
           default:
             result = "undefined"
         }
+        
+        
         return result
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let resultado = sorteia()
-        imgMoeda.image = UIImage(named: "moeda_"+resultado+".png")
+        imgMoeda.image = UIImage(named: "moeda_"+imagem+".png")
+        
         // Do any additional setup after loading the view.
     }
     
